@@ -15,8 +15,9 @@ app.secret_key = 'secret_key'
 load_dotenv()
 
 # Set up the file upload folder
-app.config['UPLOAD_FOLDER'] = 'uploads/'  
+app.config['UPLOAD_FOLDER'] = 'uploads/'  	
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif', 'webp', 'avif'} 
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # MongoDB setup
 try:
@@ -239,6 +240,6 @@ def show_videos():
 
     return render_template("videos.html", hobby=hobby, age_group=age_group, videos=videos)
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=False)
 
-if _name_ == '_main_':
-    app.run(debug=True)
