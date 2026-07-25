@@ -8,7 +8,7 @@ import pickle
 import numpy as np
 import base64
 
-app = Flask(__name__)
+app = Flask(_name__)
 app.secret_key = 'secret_key'
 
 # Loading the environment variables
