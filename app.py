@@ -34,7 +34,7 @@ except Exception as e:
 #     model = pickle.load(file)
 
 
-MODEL_PATH = os.path.join(os.path.dirname(_file_), 'rf_model.pkl')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'rf_model.pkl')
 
 with open(MODEL_PATH, 'rb') as file:
     model = pickle.load(file)
